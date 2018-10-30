@@ -22,7 +22,7 @@ namespace ConsoleInitApp
                 switch (option)
                 {
                     case 1:
-                        AddCharacter(;
+                        AddCharacter();
                         break;
                     case 2:
                         AddParty();
@@ -36,9 +36,6 @@ namespace ConsoleInitApp
                     case 5:
                         Quit();
                         break;
-                    case 6:
-                        break;
-
                     default:
                         break;
                 }
@@ -50,6 +47,7 @@ namespace ConsoleInitApp
         static void AddCharacter()
         {
             Menu CharacterMenu = new Menu("Choose an Option", new string[] { "Enter Name", "Enter HP", "Enter Damage" });
+
             while (!goBack) 
             {
 
@@ -70,15 +68,18 @@ namespace ConsoleInitApp
                     case 4:
                         goBack = true;
                         break;
-                    case 5:
-                        shouldQuit = true;
-                        break;
-
                     default:
                         break;
                 }
 
             }
+        }
+
+        static void EnterName()
+        {
+            Console.WriteLine("Enter your character's name: ");
+            string CharacterName = Console.ReadLine();
+            
         }
 
 

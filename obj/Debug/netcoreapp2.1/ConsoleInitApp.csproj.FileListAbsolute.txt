@@ -9,3 +9,9 @@ C:\Users\Jacob\source\repos\ConsoleInitApp\ConsoleInitApp\obj\Debug\netcoreapp2.
 C:\Users\Jacob\source\repos\ConsoleInitApp\ConsoleInitApp\obj\Debug\netcoreapp2.1\ConsoleInitApp.AssemblyInfo.cs
 C:\Users\Jacob\source\repos\ConsoleInitApp\ConsoleInitApp\obj\Debug\netcoreapp2.1\ConsoleInitApp.dll
 C:\Users\Jacob\source\repos\ConsoleInitApp\ConsoleInitApp\obj\Debug\netcoreapp2.1\ConsoleInitApp.pdb
+C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.csprojAssemblyReference.cache
+C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.csproj.CoreCompileInputs.cache
+C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.AssemblyInfoInputs.cache
+C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.AssemblyInfo.cs
+C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.dll
+C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.pdb
