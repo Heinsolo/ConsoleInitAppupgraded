@@ -15,3 +15,9 @@ C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\C
 C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.AssemblyInfo.cs
 C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.dll
 C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.pdb
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.csprojAssemblyReference.cache
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.csproj.CoreCompileInputs.cache
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.AssemblyInfoInputs.cache
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.AssemblyInfo.cs
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.dll
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\obj\Debug\netcoreapp2.1\ConsoleInitApp.pdb

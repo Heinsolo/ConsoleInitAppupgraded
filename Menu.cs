@@ -14,6 +14,12 @@ namespace ConsoleInitApp
             Options.AddRange(options);
         }
 
+        public string Answer()
+        {
+            string input = Console.ReadLine();
+            return input;
+        }
+
         public void Print()
         {
             Console.WriteLine(Title);

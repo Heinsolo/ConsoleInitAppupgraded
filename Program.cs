@@ -77,8 +77,8 @@ namespace ConsoleInitApp
 
         static void EnterName()
         {
-            Console.WriteLine("Enter your character's name: ");
-            string CharacterName = Console.ReadLine();
+            Menu.Answer
+            
             
         }
 
