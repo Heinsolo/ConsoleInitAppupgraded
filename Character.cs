@@ -19,5 +19,6 @@ namespace ConsoleInitApp
             //ActionTaken = actionTaken;
             HPValue = hpValue;
             DamageValue = damageValue;
+        }
     }
 }

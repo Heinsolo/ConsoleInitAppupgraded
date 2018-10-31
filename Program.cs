@@ -6,13 +6,13 @@ namespace ConsoleInitApp
     class Program
     {
        static bool shouldQuit = false;
-        static bool goBack = false;
+       static bool shouldGoBack = false;
 
         static void Main(string[] args)
         {
             //Main menu to begin app. Simple choose option.
 
-            Menu start = new Menu("Choose an option", new string[] {"Add a character", "Add a party", "Add an encounter", "Start an Encounter", "Quit" });
+            Menu start = new Menu("Choose an option", new string[] {"Add a character", "Add an encounter", "Start an Encounter", "Quit" });
 
             while (!shouldQuit)
             {
@@ -25,15 +25,12 @@ namespace ConsoleInitApp
                         AddCharacter();
                         break;
                     case 2:
-                        AddParty();
-                        break;
-                    case 3:
                         AddEncounter();
                         break;
-                    case 4:
+                    case 3:
                         StartEncounter();
                         break;
-                    case 5:
+                    case 4:
                         Quit();
                         break;
                     default:
@@ -46,13 +43,13 @@ namespace ConsoleInitApp
 
         static void AddCharacter()
         {
-            Menu CharacterMenu = new Menu("Choose an Option", new string[] { "Enter Name", "Enter HP", "Enter Damage" });
+            Menu characterMenu = new Menu("Choose an Option", new string[] { "Enter Name", "Enter HP", "Enter Damage", "Go Back" });
 
-            while (!goBack) 
+            while (!shouldGoBack) 
             {
 
-                CharacterMenu.Print();
-                int option = CharacterMenu.ReadOption();
+                characterMenu.Print();
+                int option = characterMenu.ReadOption();
 
                 switch (option)
                 {
@@ -66,22 +63,15 @@ namespace ConsoleInitApp
                         EnterDamage();
                         break;
                     case 4:
-                        goBack = true;
+                        GoBack();
                         break;
                     default:
                         break;
                 }
 
             }
-        }
 
-        static void EnterName()
-        {
-            Menu.Answer
-            
-            
         }
-
 
         static void AddParty()
         {
@@ -97,6 +87,10 @@ namespace ConsoleInitApp
             int option = EncounterMenu.ReadOption();
         }
         static void StartEncounter() { }
+        static void EnterName() { }
+        static void EnterXP() { }
+        static void EnterDamage() { }
         static void Quit() { Environment.Exit(0); }
+        static void GoBack() { Environment.Exit(0); }
     }
 }
