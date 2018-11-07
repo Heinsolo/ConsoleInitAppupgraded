@@ -22,7 +22,7 @@ namespace ConsoleInitApp
 
         public void Print()
         {
-            Console.WriteLine("\n{0}\n-----------------------------",Title);
+            Console.WriteLine(Title);
             for(int i = 0; i < Options.Count; ++i)
             {
                 Console.WriteLine("{0}. {1}", i+1, Options[i].ToString());
@@ -31,7 +31,6 @@ namespace ConsoleInitApp
 
         public int ReadOption()
         {
-            Console.Write("\n>: ");
             string input = Console.ReadLine();
             int option = int.Parse(input);
             return option;

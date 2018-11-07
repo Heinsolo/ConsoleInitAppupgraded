@@ -1,40 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace ConsoleInitApp
 {
     class Program
     {
-        static List<Character> Characters = new List<Character>();
-        static List<Party> Parties = new List<Party>();
-        static List<Encounter> Encounters = new List<Encounter>();
+       static bool shouldQuit = false;
+        static bool goBack = false;
 
-        static void Pause()
-        {
-            Console.Write("\nPress any key to continue...");
-            Console.ReadKey();
-        }
-
-        static string Prompt(string message)
-        {
-            Console.WriteLine("\n{0}:", message);
-            Console.Write(">: ");
-            return Console.ReadLine();
-        }
-
-        // Main menu to begin app. Simple choose option.
         static void Main(string[] args)
         {
-            bool shouldQuit = false;
-            Menu start = new Menu("Main menu", new string[] {
-                "Add a character",
-                "Show characters",
-                "Add a party",
-                "Add an encounter",
-                "Start an Encounter",
-                "Quit"
-            });
+            //Main menu to begin app. Simple choose option.
+
+            Menu start = new Menu("Choose an option", new string[] {"Add a character", "Add a party", "Add an encounter", "Start an Encounter", "Quit" });
 
             while (!shouldQuit)
             {
@@ -47,61 +25,47 @@ namespace ConsoleInitApp
                         AddCharacter();
                         break;
                     case 2:
-                        ShowCharacters();
-                        break;
-                    case 3:
                         AddParty();
                         break;
-                    case 4:
+                    case 3:
                         AddEncounter();
                         break;
-                    case 5:
+                    case 4:
                         StartEncounter();
                         break;
-                    case 6:
+                    case 5:
                         Quit();
                         break;
                     default:
                         break;
                 }
             }
+          
         }
+
 
         static void AddCharacter()
         {
-            bool goBack = false;
-            Menu CharacterMenu = new Menu("Add a character", new string[] {
-                "Enter Name",
-                "Enter HP",
-                "Enter Damage",
-                "Show Character",
-                "Go Back"
-            });
+            Menu CharacterMenu = new Menu("Choose an Option", new string[] { "Enter Name", "Enter HP", "Enter Damage" });
 
-            Character newCharacter = new Character();
-            Characters.Add(newCharacter);
-
-            while (!goBack)
+            while (!goBack) 
             {
+
                 CharacterMenu.Print();
                 int option = CharacterMenu.ReadOption();
 
                 switch (option)
                 {
                     case 1:
-                        EnterName(newCharacter);
+                        EnterName();
                         break;
                     case 2:
-                        EnterXP(newCharacter);
+                        EnterXP();
                         break;
                     case 3:
-                        EnterDamage(newCharacter);
+                        EnterDamage();
                         break;
                     case 4:
-                        Console.WriteLine("\n{0}", newCharacter.ToString());
-                        Pause();
-                        break;
-                    case 5:
                         goBack = true;
                         break;
                     default:
@@ -111,20 +75,13 @@ namespace ConsoleInitApp
             }
         }
 
-        static void EnterName(Character character)
+        static void EnterName()
         {
-            character.Name = Prompt("Enter the character's name");
+            Menu.Answer
+            
+            
         }
 
-        static void EnterXP(Character character)
-        {
-            character.HP = int.Parse(Prompt("Enter the character's HP"));
-        }
-
-        static void EnterDamage(Character character)
-        {
-            character.Damage = int.Parse(Prompt("Enter the character's damage"));
-        }
 
         static void AddParty()
         {
@@ -133,24 +90,12 @@ namespace ConsoleInitApp
             int option = PartyMenu.ReadOption();
 
         }
-
         static void AddEncounter()
         {
             Menu EncounterMenu = new Menu("Choose an Option", new string[] { "Enter Encounter" });
             EncounterMenu.Print();
             int option = EncounterMenu.ReadOption();
         }
-
-        static void ShowCharacters()
-        {
-            Console.WriteLine("\nCharacters\n------------------------------");
-            foreach (Character c in Characters)
-            {
-                Console.WriteLine(c.ToString());
-            }
-            Pause();
-        }
-
         static void StartEncounter() { }
         static void Quit() { Environment.Exit(0); }
     }

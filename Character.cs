@@ -8,26 +8,16 @@ namespace ConsoleInitApp
 {
     class Character
     {
-        public string Name { get; set; }
-        public int HP { get; set; }
-        public int Damage { get; set; }
+        public string CharacterName { get; set; }
+        //public Action ActionTaken { get; set; }
+        public int HPValue { get; set; }
+        public int DamageValue { get; set; }
 
-        public Character()
+        public Character(string characterName, int hpValue, int damageValue)
         {
-
-        }
-
-        public Character(string name, int hp, int damage)
-        {
-            Name = name;
-            HP = hp;
-            Damage = damage;
-        }
-
-
-        public override string ToString()
-        {
-            return String.Format("{0}: {1} HP {2} DMG", Name, HP, Damage);
-        }
+            CharacterName = characterName;
+            //ActionTaken = actionTaken;
+            HPValue = hpValue;
+            DamageValue = damageValue;
     }
 }
