@@ -87,8 +87,19 @@ namespace ConsoleInitApp
             int option = EncounterMenu.ReadOption();
         }
         static void StartEncounter() { }
-        static void EnterName() { }
-        static void EnterXP() { }
+        static void EnterName()
+        {
+            Console.WriteLine("Please enter a character name: ");
+                string CharacterName = Console.ReadLine();
+            Console.WriteLine("Your Character's name is " + CharacterName);
+            
+        }
+        static void EnterXP()
+        {
+            Console.WriteLine("Please enter your character's XP ");
+            int XPAmount = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Your Character has " + XPAmount + " points of health");
+        }
         static void EnterDamage() { }
         static void Quit() { Environment.Exit(0); }
         static void GoBack() { Environment.Exit(0); }
