@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json; 
+using Newtonsoft.Json;
+using System.IO;
+using System.Text;
 
 namespace ConsoleInitApp
 {
@@ -8,7 +10,7 @@ namespace ConsoleInitApp
     {
         static List<Character> Characters = new List<Character>();
         static List<Party> Parties = new List<Party>();
-        static List<Encounter> Encounters = new List<Encounter>();
+        static Encounter Encounter = new Encounter();
 
         static void Pause()
         {
@@ -31,8 +33,9 @@ namespace ConsoleInitApp
                 "Add a character",
                 "Show characters",
                 "Add a party",
-                "Add an encounter",
                 "Start an Encounter",
+                "Save Data",
+                "Load Data",
                 "Quit"
             });
 
@@ -53,12 +56,15 @@ namespace ConsoleInitApp
                         AddParty();
                         break;
                     case 4:
-                        AddEncounter();
-                        break;
-                    case 5:
                         StartEncounter();
                         break;
+                    case 5:
+                        SaveData();
+                        break;
                     case 6:
+                        LoadData();
+                        break;
+                    case 7:
                         Quit();
                         break;
                     default:
@@ -69,69 +75,18 @@ namespace ConsoleInitApp
 
         static void AddCharacter()
         {
-            bool goBack = false;
-            Menu CharacterMenu = new Menu("Add a character", new string[] {
-                "Enter Name",
-                "Enter HP",
-                "Enter Damage",
-                "Show Character",
-                "Go Back"
-            });
-
-            Character newCharacter = new Character();
-            Characters.Add(newCharacter);
-
-            while (!goBack)
-            {
-                CharacterMenu.Print();
-                int option = CharacterMenu.ReadOption();
-
-                switch (option)
-                {
-                    case 1:
-                        EnterName(newCharacter);
-                        break;
-                    case 2:
-                        EnterXP(newCharacter);
-                        break;
-                    case 3:
-                        EnterDamage(newCharacter);
-                        break;
-                    case 4:
-                        Console.WriteLine("\n{0}", newCharacter.ToString());
-                        Pause();
-                        break;
-                    case 5:
-                        goBack = true;
-                        break;
-                    default:
-                        break;
-                }
-
-            }
-        }
-
-        static void EnterName(Character character)
-        {
-            character.Name = Prompt("Enter the character's name");
-        }
-
-        static void EnterXP(Character character)
-        {
-            character.HP = int.Parse(Prompt("Enter the character's HP"));
-        }
-
-        static void EnterDamage(Character character)
-        {
-            character.Damage = int.Parse(Prompt("Enter the character's damage"));
+            Character character = new Character(Prompt("Enter Character Name "));
+            Characters.Add(character);
         }
 
         static void AddParty()
         {
             bool goBack = false;
-            Menu PartyMenu = new Menu("Choose an Option", new string[]
+            Menu PartyMenu = new Menu("Party Menu", new string[]
             { "Enter Party Name",
-              "Add Characters"
+              "Add Characters",
+              "Show Party",
+              "Go Back"
             });
 
             Party newParty = new Party();
@@ -151,7 +106,7 @@ namespace ConsoleInitApp
                         AddNames(newParty);
                         break;
                     case 3:
-                        Console.WriteLine("\n{0}", newParty);
+                        Console.WriteLine("\n{0}", newParty.ToString());
                         Pause();
                         break;
                     case 4:
@@ -167,24 +122,69 @@ namespace ConsoleInitApp
         static void PartyName(Party party)
         {
             party.Name = Prompt("Enter your party's name");
+            
         }
 
         static void AddNames(Party party)
         {
+            List<string> availableCharacters = new List<string>();
+            foreach(Character c in Characters)
+            {
+                availableCharacters.Add(c.ToString());
             
-        }
+            }
 
-        static void ShowParty(Party party)
-        {
+            availableCharacters.Add("Go Back");
 
+            Menu AddCharacters = new Menu("Add Characters", availableCharacters.ToArray());
+            AddCharacters.Print();
+            bool goBack = false;
+            while (!goBack)
+            {
+                AddCharacters.Print();
+                int option = AddCharacters.ReadOption();
+
+                if (option == availableCharacters.Count)
+                {
+                    goBack = true;
+                }
+                else
+                {
+                    party.Characters.Add(Characters[option - 1]);
+                }
+
+            }
         }
         
-
-        static void AddEncounter()
+        static void StartEncounter()
         {
-            Menu EncounterMenu = new Menu("Choose an Option", new string[] { "Enter Encounter" });
-            EncounterMenu.Print();
-            int option = EncounterMenu.ReadOption();
+            foreach (Party p in Parties)
+            {
+                Encounter.Parties.Add(p);
+            }
+            bool goBack = false;
+            Menu EncounterMenu = new Menu("Encounter Menu", new string[] { "Input Initiative", "Show Initiative Order", "Go Back" });
+
+            while (!goBack)
+            {
+                EncounterMenu.Print();
+                int option = EncounterMenu.ReadOption();
+                switch (option)
+                {
+                    case 1:
+                        InputInitiative();
+                        break;
+                    case 2:
+                        ShowInitiativeOrder();
+                        break;
+                    case 3:
+                        goBack = true;
+                        break;
+                    default:
+                        break;
+
+                }
+            }
         }
 
         static void ShowCharacters()
@@ -197,7 +197,52 @@ namespace ConsoleInitApp
             Pause();
         }
 
-        static void StartEncounter() { }
-        static void Quit() { Environment.Exit(0); }
+        public static void LoadData()
+        {
+            string fileName = Prompt("Enter File Name");
+            SaveState LoadedData = SaveState.Load(fileName);
+            Characters = LoadedData.Characters;
+            Parties = LoadedData.Parties;
+            Encounter = LoadedData.Encounter;
+        }
+
+        public static void SaveData()
+        {
+            string fileName = Prompt("Enter File Name");
+            SaveState SaveData = new SaveState(Characters, Parties, Encounter);
+            SaveData.Save(fileName);
+        }
+
+        static void InputInitiative()
+        {
+            foreach(Party p in Encounter.Parties)
+            {
+                foreach (Character c in p.Characters)
+                {
+                    string Number = Prompt(string.Format("Enter Initiative for {0}", c.ToString()));
+                    int Roll = int.Parse(Number);
+                    c.Initiative = Roll;
+                }
+            }
+
+            Encounter.BuildInitiativeOrder();
+        }
+
+        static void ShowInitiativeOrder()
+        {
+            foreach(Character c in Encounter.InitiativeOrder)
+            {
+                Console.WriteLine("{0}: {1}", c.Initiative, c.ToString());
+            }
+        }
+        static void AddParties()
+        {
+            
+        }
+        
+        static void Quit()
+        {
+            Environment.Exit(0);
+        }
     }
 }

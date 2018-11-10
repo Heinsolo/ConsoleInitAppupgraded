@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +9,12 @@ namespace ConsoleInitApp
 {
     class Character
     {
+        public int Initiative { get; set; }
         public string Name { get; set; }
-        //public Action ActionTaken { get; set; }
-        public int HP { get; set; }
-        public int Damage { get; set; }
-
-        public Character(string name, int hp, int damage)
+        
+        public Character(string name)
         {
             Name = name;
-            //ActionTaken = actionTaken;
-            HP = hp;
-            Damage = damage;
         }
 
         public Character()
@@ -27,7 +23,9 @@ namespace ConsoleInitApp
 
         public override string ToString()
         {
-            return String.Format("{0}; {1} HP {2} DMG", Name, HP, Damage);
+            return Name;
         }
+
+
     }
 }

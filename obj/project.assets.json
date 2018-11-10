@@ -725,11 +725,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jacob\\Documents\\GitHub\\ConsoleInitAppupgraded\\ConsoleInitApp.csproj",
+      "projectUniqueName": "C:\\Users\\Jacob\\source\\repos\\ConsoleInitApp\\ConsoleInitApp\\ConsoleInitApp.csproj",
       "projectName": "ConsoleInitApp",
-      "projectPath": "C:\\Users\\Jacob\\Documents\\GitHub\\ConsoleInitAppupgraded\\ConsoleInitApp.csproj",
+      "projectPath": "C:\\Users\\Jacob\\source\\repos\\ConsoleInitApp\\ConsoleInitApp\\ConsoleInitApp.csproj",
       "packagesPath": "C:\\Users\\Jacob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jacob\\Documents\\GitHub\\ConsoleInitAppupgraded\\obj\\",
+      "outputPath": "C:\\Users\\Jacob\\source\\repos\\ConsoleInitApp\\ConsoleInitApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

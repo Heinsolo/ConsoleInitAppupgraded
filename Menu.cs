@@ -33,8 +33,26 @@ namespace ConsoleInitApp
         {
             Console.Write("\n>: ");
             string input = Console.ReadLine();
-            int option = int.Parse(input);
-            return option;
+            try
+            {
+                int option = int.Parse(input);
+
+                if (option > 0 && option <= Options.Count)
+                {
+                    return option;
+                }
+               else
+                {
+                    throw new Exception("Invalid Selection");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Invalid Selection. Please try again");
+                return -1;
+            }
         }
+
+
      }
 }
