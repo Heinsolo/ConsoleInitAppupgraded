@@ -26,3 +26,8 @@ C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\C
 C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.runtimeconfig.dev.json
 C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.dll
 C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.pdb
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.deps.json
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.runtimeconfig.json
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.runtimeconfig.dev.json
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.dll
+\\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.pdb

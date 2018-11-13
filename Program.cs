@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using System.IO;
-using System.Text;
 
 namespace ConsoleInitApp
 {
@@ -14,7 +11,7 @@ namespace ConsoleInitApp
 
         static void Pause()
         {
-            Console.Write("\nPress any key to continue...");
+            Console.Write("\n Press any key to continue...");
             Console.ReadKey();
         }
 
@@ -131,7 +128,6 @@ namespace ConsoleInitApp
             foreach(Character c in Characters)
             {
                 availableCharacters.Add(c.ToString());
-            
             }
 
             availableCharacters.Add("Go Back");
@@ -152,7 +148,6 @@ namespace ConsoleInitApp
                 {
                     party.Characters.Add(Characters[option - 1]);
                 }
-
             }
         }
         
@@ -234,10 +229,6 @@ namespace ConsoleInitApp
             {
                 Console.WriteLine("{0}: {1}", c.Initiative, c.ToString());
             }
-        }
-        static void AddParties()
-        {
-            
         }
         
         static void Quit()

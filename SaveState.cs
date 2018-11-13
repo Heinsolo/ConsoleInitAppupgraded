@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
 using System.IO;
 
 namespace ConsoleInitApp
@@ -17,7 +15,6 @@ namespace ConsoleInitApp
             Characters = characters;
             Parties = parties;
             Encounter = encounter;
-
         }
 
         public void Save(string fileName)

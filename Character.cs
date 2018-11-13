@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleInitApp
+﻿namespace ConsoleInitApp
 {
     class Character
     {
@@ -17,15 +10,10 @@ namespace ConsoleInitApp
             Name = name;
         }
 
-        public Character()
-        {
-        }
-
+        //I had to override this method because it's also used in the Party class. 
         public override string ToString()
         {
             return Name;
         }
-
-
     }
 }

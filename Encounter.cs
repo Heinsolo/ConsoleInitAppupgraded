@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleInitApp
 {
@@ -10,11 +8,6 @@ namespace ConsoleInitApp
     {
         public List<Party> Parties = new List<Party>();
         public List<Character> InitiativeOrder = new List<Character>();
-
-        public Encounter()
-        {
-
-        }
 
         public void BuildInitiativeOrder()
         {
