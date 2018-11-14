@@ -9,13 +9,13 @@ namespace ConsoleInitApp
         static List<Party> Parties = new List<Party>();
         static Encounter Encounter = new Encounter();
 
-        static void Pause()
+        static void Pause() //This method is called whenever we want a pause it the application so the user has a chance to press a key to proceed forward. Just for convenience.
         {
             Console.Write("\n Press any key to continue...");
             Console.ReadKey();
         }
 
-        static string Prompt(string message)
+        static string Prompt(string message) //This method is called when we want to prompt a message for the user to take in more specific input.
         {
             Console.WriteLine("\n{0}:", message);
             Console.Write(">: ");
@@ -70,13 +70,13 @@ namespace ConsoleInitApp
             }
         }
 
-        static void AddCharacter()
+        static void AddCharacter() //Allows the user to input a character name.
         {
             Character character = new Character(Prompt("Enter Character Name "));
             Characters.Add(character);
         }
 
-        static void AddParty()
+        static void AddParty() //Menu for the party section of the app.
         {
             bool goBack = false;
             Menu PartyMenu = new Menu("Party Menu", new string[]
@@ -116,13 +116,13 @@ namespace ConsoleInitApp
             }
         }
 
-        static void PartyName(Party party)
+        static void PartyName(Party party) //Enter a name for the party.
         {
             party.Name = Prompt("Enter your party's name");
             
         }
 
-        static void AddNames(Party party)
+        static void AddNames(Party party) //Allows the user to add characters from the character menu into a party.
         {
             List<string> availableCharacters = new List<string>();
             foreach(Character c in Characters)
@@ -151,7 +151,7 @@ namespace ConsoleInitApp
             }
         }
         
-        static void StartEncounter()
+        static void StartEncounter() //This is a menu that starts the encounter. 
         {
             foreach (Party p in Parties)
             {
@@ -182,7 +182,7 @@ namespace ConsoleInitApp
             }
         }
 
-        static void ShowCharacters()
+        static void ShowCharacters() //Shows a list of characters that the user inputted.
         {
             Console.WriteLine("\nCharacters\n------------------------------");
             foreach (Character c in Characters)
@@ -192,7 +192,7 @@ namespace ConsoleInitApp
             Pause();
         }
 
-        public static void LoadData()
+        public static void LoadData() //Will load all data that the user previously saved.
         {
             string fileName = Prompt("Enter File Name");
             SaveState LoadedData = SaveState.Load(fileName);
@@ -201,14 +201,14 @@ namespace ConsoleInitApp
             Encounter = LoadedData.Encounter;
         }
 
-        public static void SaveData()
+        public static void SaveData() //Offers for the user to save all of the info to a .txt file.
         {
             string fileName = Prompt("Enter File Name");
             SaveState SaveData = new SaveState(Characters, Parties, Encounter);
             SaveData.Save(fileName);
         }
 
-        static void InputInitiative()
+        static void InputInitiative() //Prompts user to put the initiave roll number in so it can order characters accordingly.
         {
             foreach(Party p in Encounter.Parties)
             {
@@ -223,7 +223,7 @@ namespace ConsoleInitApp
             Encounter.BuildInitiativeOrder();
         }
 
-        static void ShowInitiativeOrder()
+        static void ShowInitiativeOrder() //Prints initiative order. 
         {
             foreach(Character c in Encounter.InitiativeOrder)
             {
@@ -231,7 +231,7 @@ namespace ConsoleInitApp
             }
         }
         
-        static void Quit()
+        static void Quit() //Will exit the application
         {
             Environment.Exit(0);
         }
