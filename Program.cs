@@ -25,8 +25,13 @@ namespace ConsoleInitApp
         // Main menu to begin app. Simple choose option.
         static void Main(string[] args)
         {
+
+            Console.WriteLine("Welcome to my Initiative Application. Press any key to continue...");
+            Console.ReadKey();
+
             bool shouldQuit = false;
-            Menu start = new Menu("Main menu", new string[] {
+            Menu start = new Menu("Main menu", new string[] 
+            {
                 "Add a character",
                 "Show characters",
                 "Add a party",
@@ -80,7 +85,8 @@ namespace ConsoleInitApp
         {
             bool goBack = false;
             Menu PartyMenu = new Menu("Party Menu", new string[]
-            { "Enter Party Name",
+            {
+              "Enter Party Name",
               "Add Characters",
               "Show Party",
               "Go Back"
@@ -132,7 +138,7 @@ namespace ConsoleInitApp
 
             availableCharacters.Add("Go Back");
 
-            Menu AddCharacters = new Menu("Add Characters", availableCharacters.ToArray());
+            Menu AddCharacters = new Menu("Character Menu", availableCharacters.ToArray());
             AddCharacters.Print();
             bool goBack = false;
             while (!goBack)
@@ -158,7 +164,12 @@ namespace ConsoleInitApp
                 Encounter.Parties.Add(p);
             }
             bool goBack = false;
-            Menu EncounterMenu = new Menu("Encounter Menu", new string[] { "Input Initiative", "Show Initiative Order", "Go Back" });
+            Menu EncounterMenu = new Menu("Encounter Menu", new string[] 
+            {
+                "Input Initiative",
+                "Show Initiative Order",
+                "Go Back"
+            });
 
             while (!goBack)
             {
@@ -225,12 +236,12 @@ namespace ConsoleInitApp
 
         static void ShowInitiativeOrder() //Prints initiative order. 
         {
-            foreach(Character c in Encounter.InitiativeOrder)
+            foreach (Character c in Encounter.InitiativeOrder)
             {
                 Console.WriteLine("{0}: {1}", c.Initiative, c.ToString());
             }
         }
-        
+
         static void Quit() //Will exit the application
         {
             Environment.Exit(0);

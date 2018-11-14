@@ -719,23 +719,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jhein\\.nuget\\packages\\": {},
+    "C:\\Users\\Jacob\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\spc-file1\\Users\\Shares\\jhein\\Documents\\GitHub\\ConsoleInitAppupgraded\\ConsoleInitApp.csproj",
+      "projectUniqueName": "C:\\Users\\Jacob\\source\\repos\\ConsoleInitApp\\ConsoleInitApp\\ConsoleInitApp.csproj",
       "projectName": "ConsoleInitApp",
-      "projectPath": "\\\\spc-file1\\Users\\Shares\\jhein\\Documents\\GitHub\\ConsoleInitAppupgraded\\ConsoleInitApp.csproj",
-      "packagesPath": "C:\\Users\\jhein\\.nuget\\packages\\",
-      "outputPath": "\\\\spc-file1\\Users\\Shares\\jhein\\Documents\\GitHub\\ConsoleInitAppupgraded\\obj\\",
+      "projectPath": "C:\\Users\\Jacob\\source\\repos\\ConsoleInitApp\\ConsoleInitApp\\ConsoleInitApp.csproj",
+      "packagesPath": "C:\\Users\\Jacob\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jacob\\source\\repos\\ConsoleInitApp\\ConsoleInitApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jhein\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

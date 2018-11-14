@@ -19,7 +19,7 @@ namespace ConsoleInitApp
                 }
             }
 
-            InitiativeOrder = InitiativeOrder.OrderBy(c => c.Initiative).Reverse().ToList(); //This LINQ sequence actually puts the order of the characters in order from the greatest initiative number to the lowest.
+            InitiativeOrder = InitiativeOrder.OrderBy(c => c.Initiative).Reverse().ToList(); //This LINQ sequence actually puts the order of the characters in order from the highest initiative number to the lowest.
         }
     }
 }
