@@ -32,3 +32,4 @@ C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\C
 \\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.dll
 \\spc-file1\Users\Shares\jhein\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\ConsoleInitApp.pdb
 C:\Users\Jacob\source\repos\ConsoleInitApp\ConsoleInitApp\bin\Debug\netcoreapp2.1\Test
+C:\Users\Jacob\Documents\GitHub\ConsoleInitAppupgraded\bin\Debug\netcoreapp2.1\Test

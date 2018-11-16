@@ -26,14 +26,12 @@ namespace ConsoleInitApp
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Welcome to my Initiative Application. Press any key to continue...");
-            Console.ReadKey();
-
             bool shouldQuit = false;
             Menu start = new Menu("Main menu", new string[] 
             {
                 "Add a character",
                 "Show characters",
+                "Show Saved Party",
                 "Add a party",
                 "Start an Encounter",
                 "Save Data",
@@ -203,7 +201,7 @@ namespace ConsoleInitApp
             Pause();
         }
 
-        public static void LoadData() //Will load all data that the user previously saved.
+            public static void LoadData() //Will load all data that the user previously saved.
         {
             string fileName = Prompt("Enter File Name");
             SaveState LoadedData = SaveState.Load(fileName);
