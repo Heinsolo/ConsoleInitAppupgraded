@@ -31,7 +31,10 @@ namespace ConsoleInitApp
             string input = Console.ReadLine();
             try
             {
-                int option = int.Parse(input); //Parses the string input into an int.
+                if (!int.TryParse(input, out int option))
+                {
+                    throw new Exception("Input was not a valid numer.");
+                }
 
                 if (option > 0 && option <= Options.Count)
                 {
@@ -42,7 +45,7 @@ namespace ConsoleInitApp
                     throw new Exception("Invalid Selection"); //Exception so that the application doesn't crash if anything but the numbers offered in the instantiated Menu are chosen. 
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("Invalid Selection. Please try again");
                 return -1;
