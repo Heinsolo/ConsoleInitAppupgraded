@@ -9,13 +9,15 @@ namespace ConsoleInitApp
         static List<Party> Parties = new List<Party>();
         static Encounter Encounter = new Encounter();
 
-        static void Pause() //This method is called whenever we want a pause it the application so the user has a chance to press a key to proceed forward. Just for convenience.
+        static void
+            Pause() //This method is called whenever we want a pause it the application so the user has a chance to press a key to proceed forward. Just for convenience.
         {
             Console.Write("\n Press any key to continue...");
             Console.ReadKey();
         }
 
-        static string Prompt(string message) //This method is called when we want to prompt a message for the user to take in more specific input.
+        static string
+            Prompt(string message) //This method is called when we want to prompt a message for the user to take in more specific input.
         {
             Console.WriteLine("\n{0}:", message);
             Console.Write(">: ");
@@ -27,15 +29,15 @@ namespace ConsoleInitApp
         {
 
             bool shouldQuit = false;
-            Menu start = new Menu("Main menu", new string[] 
+            Menu start = new Menu("Main menu", new string[]
             {
                 "Add a character",
                 "Show characters",
-                "Show Saved Party",
+                "Show parties",
                 "Add a party",
-                "Start an Encounter",
-                "Save Data",
-                "Load Data",
+                "Start an encounter",
+                "Save data",
+                "Load data",
                 "Quit"
             });
 
@@ -53,18 +55,21 @@ namespace ConsoleInitApp
                         ShowCharacters();
                         break;
                     case 3:
-                        AddParty();
+                        ShowParties();
                         break;
                     case 4:
-                        StartEncounter();
+                        AddParty();
                         break;
                     case 5:
-                        SaveData();
+                        StartEncounter();
                         break;
                     case 6:
-                        LoadData();
+                        SaveData();
                         break;
                     case 7:
+                        LoadData();
+                        break;
+                    case 8:
                         Quit();
                         break;
                     default:
@@ -84,10 +89,10 @@ namespace ConsoleInitApp
             bool goBack = false;
             Menu PartyMenu = new Menu("Party Menu", new string[]
             {
-              "Enter Party Name",
-              "Add Characters",
-              "Show Party",
-              "Go Back"
+                "Enter Party Name",
+                "Add Characters",
+                "Show Party",
+                "Go Back"
             });
 
             Party newParty = new Party();
@@ -120,16 +125,30 @@ namespace ConsoleInitApp
             }
         }
 
+        static void ShowParties()
+        {
+            foreach (Party p in Parties)
+            {
+                Console.WriteLine("{0}\n-----------------", p.Name);
+                foreach (Character c in p.Characters)
+                {
+                    Console.WriteLine(c.Name);
+                }
+            }
+
+            Pause();
+        }
+
         static void PartyName(Party party) //Enter a name for the party.
         {
             party.Name = Prompt("Enter your party's name");
-            
+
         }
 
         static void AddNames(Party party) //Allows the user to add characters from the character menu into a party.
         {
             List<string> availableCharacters = new List<string>();
-            foreach(Character c in Characters)
+            foreach (Character c in Characters)
             {
                 availableCharacters.Add(c.ToString());
             }
@@ -154,15 +173,16 @@ namespace ConsoleInitApp
                 }
             }
         }
-        
+
         static void StartEncounter() //This is a menu that starts the encounter. 
         {
             foreach (Party p in Parties)
             {
                 Encounter.Parties.Add(p);
             }
+
             bool goBack = false;
-            Menu EncounterMenu = new Menu("Encounter Menu", new string[] 
+            Menu EncounterMenu = new Menu("Encounter Menu", new string[]
             {
                 "Input Initiative",
                 "Show Initiative Order",
@@ -198,10 +218,11 @@ namespace ConsoleInitApp
             {
                 Console.WriteLine(c.ToString());
             }
+
             Pause();
         }
 
-            public static void LoadData() //Will load all data that the user previously saved.
+        public static void LoadData() //Will load all data that the user previously saved.
         {
             string fileName = Prompt("Enter File Name");
             SaveState LoadedData = SaveState.Load(fileName);
@@ -217,9 +238,10 @@ namespace ConsoleInitApp
             SaveData.Save(fileName);
         }
 
-        static void InputInitiative() //Prompts user to put the initiave roll number in so it can order characters accordingly.
+        static void
+            InputInitiative() //Prompts user to put the initiave roll number in so it can order characters accordingly.
         {
-            foreach(Party p in Encounter.Parties)
+            foreach (Party p in Encounter.Parties)
             {
                 foreach (Character c in p.Characters)
                 {
