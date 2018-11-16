@@ -31,7 +31,7 @@ namespace ConsoleInitApp
             {
                 "Add a character",
                 "Show characters",
-                "Show Saved Party",
+                "Show Parties",
                 "Add a party",
                 "Start an Encounter",
                 "Save Data",
@@ -53,18 +53,21 @@ namespace ConsoleInitApp
                         ShowCharacters();
                         break;
                     case 3:
-                        AddParty();
+                        ShowParties();
                         break;
                     case 4:
-                        StartEncounter();
+                        AddParty();
                         break;
                     case 5:
-                        SaveData();
+                        StartEncounter();
                         break;
                     case 6:
-                        LoadData();
+                        SaveData();
                         break;
                     case 7:
+                        LoadData();
+                        break;
+                    case 8:
                         Quit();
                         break;
                     default:
@@ -118,6 +121,20 @@ namespace ConsoleInitApp
                 }
 
             }
+        }
+
+        static void ShowParties()
+        {
+            foreach (Party p in Parties)
+            {
+                Console.WriteLine("{0}\n----------------", p.Name);
+                foreach (Character c in p.Characters)
+                {
+                    Console.WriteLine(c.Name);
+                }
+            }
+
+            Pause();
         }
 
         static void PartyName(Party party) //Enter a name for the party.

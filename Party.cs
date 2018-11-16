@@ -8,6 +8,7 @@ namespace ConsoleInitApp
     {
         public List<Character> Characters = new List<Character>();
         public string Name { get; set; }
+        public string PartyName { get; set; }
 
         //I had to override this method because it's also used in the Character class.
         public override string ToString()
@@ -21,6 +22,5 @@ namespace ConsoleInitApp
             }
             return sb.ToString();
         }
-
     }
 }
