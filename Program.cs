@@ -9,15 +9,13 @@ namespace ConsoleInitApp
         static List<Party> Parties = new List<Party>();
         static Encounter Encounter = new Encounter();
 
-        static void
-            Pause() //This method is called whenever we want a pause it the application so the user has a chance to press a key to proceed forward. Just for convenience.
+        static void Pause() //This method is called whenever we want a pause it the application so the user has a chance to press a key to proceed forward. Just for convenience.
         {
             Console.Write("\n Press any key to continue...");
             Console.ReadKey();
         }
 
-        static string
-            Prompt(string message) //This method is called when we want to prompt a message for the user to take in more specific input.
+        static string Prompt(string message) //This method is called when we want to prompt a message for the user to take in more specific input.
         {
             Console.WriteLine("\n{0}:", message);
             Console.Write(">: ");
@@ -238,8 +236,7 @@ namespace ConsoleInitApp
             SaveData.Save(fileName);
         }
 
-        static void
-            InputInitiative() //Prompts user to put the initiave roll number in so it can order characters accordingly.
+        static void InputInitiative() //Prompts user to put the initiave roll number in so it can order characters accordingly.
         {
             foreach (Party p in Encounter.Parties)
             {
